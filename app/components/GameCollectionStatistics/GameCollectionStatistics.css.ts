@@ -17,5 +17,7 @@ export const statisticText = style({
     fontWeight: '700',
     position: 'absolute',
     top: '40%',
-    left: '25%'
+    left: '25%',
+    pointerEvents: 'none',
+    userSelect: 'none'
 })

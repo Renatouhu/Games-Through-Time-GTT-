@@ -2,7 +2,7 @@
 import { Collection } from "../3DObjects/Collection"
 import { statisticsSection, statisticText, canvasCollection } from "./GameCollectionStatistics.css"
 import { Canvas, useFrame } from "@react-three/fiber"
-import { ScrollControls, useScroll } from "@react-three/drei"
+import { ScrollControls, useScroll, useProgress } from "@react-three/drei"
 import { getProject, ISheet, val } from "@theatre/core"
 import studio from "@theatre/studio"
 import extension from '@theatre/r3f/dist/extension'
@@ -21,8 +21,10 @@ export function GameColletionStatistics() {
     const collectionSheet = getProject('collection', { state: collectionState }).sheet('collection_sheet')
     const [gamesAmout, setGamesAmout] = useState(0)
 
+    const { progress } = useProgress()
+
     useEffect(() => {
-        const timeOutId = setTimeout(() => {
+        if (progress === 100) {
             const scrollArea = document.querySelector(`.${canvasCollection}`)
             if (scrollArea) {
                 const elementDiv = scrollArea.children[0].lastChild as HTMLElement | null
@@ -30,9 +32,8 @@ export function GameColletionStatistics() {
                     elementDiv.style.left = '18px'
                 }
             }
-        }, 3000)
-        return () => clearTimeout(timeOutId)
-    }, [])
+        }
+    }, [progress])
 
     return (
         <section className={statisticsSection}>

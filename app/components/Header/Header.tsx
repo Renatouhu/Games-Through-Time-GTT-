@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Rowdies } from "next/font/google";
-import { header, h1, navHeader } from "@/app/components/Header/header.css";
+import { header, h1, navHeader, list, item1, item2, item3 } from "@/app/components/Header/header.css";
 
 const rowdies = Rowdies({ subsets: ["latin"], weight: "400" });
 
@@ -79,10 +79,10 @@ export function Header() {
         <h1 className={`${rowdies.className} ${h1}`}>Games Through Time</h1>
       </div>
       <nav className={navHeader}>
-        <ul>
-          <li><a>Home</a></li>
-          <li><a>Collection</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <ul className={list}>
+          <li><a className={item1}>Home</a></li>
+          <li><a className={item2}>Collection</a></li>
+          <li><a href="#contact" className={item3}>Contact</a></li>
         </ul>
       </nav>
     </header>

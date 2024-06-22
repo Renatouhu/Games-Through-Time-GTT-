@@ -1,6 +1,4 @@
-import { globalStyle, style, createVar } from "@vanilla-extract/css";
-
-export const accentVar = createVar()
+import { globalStyle, style} from "@vanilla-extract/css";
 
 export const header = style({
     padding: 20,
@@ -12,23 +10,39 @@ export const navHeader = style({
     margin: '0 auto 0 auto',
 })
 
-globalStyle(`${navHeader} ul`, {
-    display: 'flex',
-    gap: 35,
+export const list = style({
     position: 'relative',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    display: 'flex',
     flexWrap: 'nowrap',
-    touchAction: 'none'
+    gap: 35,
+    listStyle: 'none',
 })
 
-globalStyle(`${navHeader} ul li`, {
-    listStyleType: 'none',
+export const item1 = style({
+    ':hover': {
+        color: 'red',
+    }
+})
+
+export const item2 = style({
+    ':hover': {
+        color: '#00BF00'
+    }
+})
+
+export const item3 = style({
+    ':hover': {
+        color: '#0040BF'
+    }
+})
+
+globalStyle(`${list} li a`, {
     textDecoration: 'none',
-})
-
-globalStyle(`${navHeader} ul li a`, {
-    display: 'inline-block',
-    padding: '0.5rem 1rem',
-    textDecoration: 'none'
+    color: 'color-mix(in lch, canvasText 50%, canvas)',
+    cursor: 'pointer'
 })
 
 export const h1 = style({

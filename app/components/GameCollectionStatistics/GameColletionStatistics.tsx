@@ -1,7 +1,7 @@
 "use client"
 import { Collection } from "../3DObjects/Collection"
 import { statisticsSection, statisticText, canvasCollection } from "./GameCollectionStatistics.css"
-import { Canvas, useFrame, useThree } from "@react-three/fiber"
+import { Canvas, useFrame } from "@react-three/fiber"
 import { ScrollControls, useScroll } from "@react-three/drei"
 import { getProject, ISheet, val } from "@theatre/core"
 import studio from "@theatre/studio"
@@ -9,7 +9,7 @@ import extension from '@theatre/r3f/dist/extension'
 import { SheetProvider, PerspectiveCamera as TheatreCamera, useCurrentSheet, editable as e } from "@theatre/r3f"
 import collectionState from '../../../public/collection.theatre-project-state.json'
 import * as React from 'react'
-import { useState, useRef } from "react"
+import { useState } from "react"
 
 
 if (process.env.NODE_ENV === 'development') {

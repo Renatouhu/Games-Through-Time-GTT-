@@ -9,7 +9,7 @@ import extension from '@theatre/r3f/dist/extension'
 import { SheetProvider, PerspectiveCamera as TheatreCamera, useCurrentSheet, editable as e } from "@theatre/r3f"
 import collectionState from '../../../public/collection.theatre-project-state.json'
 import * as React from 'react'
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 
 
 if (process.env.NODE_ENV === 'development') {
@@ -20,6 +20,19 @@ if (process.env.NODE_ENV === 'development') {
 export function GameColletionStatistics() {
     const collectionSheet = getProject('collection', { state: collectionState }).sheet('collection_sheet')
     const [gamesAmout, setGamesAmout] = useState(0)
+
+    useEffect(() => {
+        const timeOutId = setTimeout(() => {
+            const scrollArea = document.querySelector(`.${canvasCollection}`)
+            if (scrollArea) {
+                const elementDiv = scrollArea.children[0].lastChild as HTMLElement | null
+                if (elementDiv) {
+                    elementDiv.style.left = '18px'
+                }
+            }
+        }, 3000)
+        return () => clearTimeout(timeOutId)
+    }, [])
 
     return (
         <section className={statisticsSection}>

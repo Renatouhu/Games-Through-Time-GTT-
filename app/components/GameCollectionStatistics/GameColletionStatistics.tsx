@@ -38,7 +38,7 @@ export function GameColletionStatistics() {
     return (
         <section className={statisticsSection}>
             <Canvas gl={{ preserveDrawingBuffer: true }} className={canvasCollection}>
-                <ScrollControls pages={3} maxSpeed={0.18}>
+                <ScrollControls pages={3} maxSpeed={0.15}>
                     <SheetProvider sheet={collectionSheet}>
                         <Scene setGamesAmout={setGamesAmout} />
                     </SheetProvider>

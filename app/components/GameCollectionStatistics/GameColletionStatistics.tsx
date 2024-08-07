@@ -29,7 +29,7 @@ export function GameColletionStatistics() {
             if (scrollArea) {
                 const elementDiv = scrollArea.children[0].lastChild as HTMLElement | null
                 if (elementDiv) {
-                    elementDiv.style.left = '18px'
+                    elementDiv.style.left = `20px`
                 }
             }
         }

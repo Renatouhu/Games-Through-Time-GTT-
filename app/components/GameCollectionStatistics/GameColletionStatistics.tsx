@@ -9,7 +9,7 @@ import extension from '@theatre/r3f/dist/extension'
 import { SheetProvider, PerspectiveCamera as TheatreCamera, useCurrentSheet, editable as e } from "@theatre/r3f"
 import collectionState from '../../../public/collection.theatre-project-state.json'
 import * as React from 'react'
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 
 
 if (process.env.NODE_ENV === 'development') {

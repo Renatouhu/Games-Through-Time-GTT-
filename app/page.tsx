@@ -9,7 +9,7 @@ export default function Home() {
       <section className={page}>
         <Header></Header>
         <Main></Main>
-        <About />
+        <About></About>
       </section>
     </>
   );
